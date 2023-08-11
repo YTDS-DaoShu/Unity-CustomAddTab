@@ -14,21 +14,21 @@ public class CustomAddTab
 
         k_PaneTypes.SetValue(null, new Type[]
         {
-            typeof(SceneView),
             typeof(TestWindow),
-            //assembly.GetType("UnityEditor.GameView"),
-            //assembly.GetType("UnityEditor.InspectorWindow"),
-            //assembly.GetType("UnityEditor.SceneHierarchyWindow"),
-            //assembly.GetType("UnityEditor.ProjectBrowser"),
-            //assembly.GetType("UnityEditor.ProfilerWindow"),
-            //assembly.GetType("UnityEditor.AnimationWindow"),
+            typeof(SceneView),
+            assembly.GetType("UnityEditor.GameView"),
+            assembly.GetType("UnityEditor.InspectorWindow"),
+            assembly.GetType("UnityEditor.SceneHierarchyWindow"),
+            assembly.GetType("UnityEditor.ProjectBrowser"),
+            assembly.GetType("UnityEditor.ProfilerWindow"),
+            assembly.GetType("UnityEditor.AnimationWindow"),
         });
     }
-    public class TestWindow : EditorWindow
+}
+public class TestWindow : EditorWindow
+{
+    public void Awake()
     {
-        public void Awake()
-        {
-            Debug.Log("CustomAddTab");
-        }
+        Debug.Log("CustomAddTab");
     }
 }
