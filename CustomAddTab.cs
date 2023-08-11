@@ -2,6 +2,7 @@
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [InitializeOnLoad]
 public class CustomAddTab
@@ -15,7 +16,7 @@ public class CustomAddTab
         k_PaneTypes.SetValue(null, new Type[]
         {
             //新增窗口项 NewWindowTabs
-            typeof(TestWindow),
+            typeof(TestButton),
             assembly.GetType("UnityEditor.ConsoleWindow"),
             //默认窗口项 DefaultWindowTabs
             typeof(SceneView),
@@ -28,10 +29,12 @@ public class CustomAddTab
         });
     }
 }
-public class TestWindow : EditorWindow
+public class TestButton : EditorWindow
 {
-    public void Awake()
+    void CreateGUI()
     {
+        //关闭窗口以实现按钮功能 Close window for button functionality
         Debug.Log("CustomAddTab");
+        this.Close();
     }
 }
