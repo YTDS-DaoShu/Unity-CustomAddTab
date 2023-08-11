@@ -14,7 +14,10 @@ public class CustomAddTab
 
         k_PaneTypes.SetValue(null, new Type[]
         {
+            //新增窗口项 NewWindowTabs
             typeof(TestWindow),
+            assembly.GetType("UnityEditor.ConsoleWindow"),
+            //默认窗口项 DefaultWindowTabs
             typeof(SceneView),
             assembly.GetType("UnityEditor.GameView"),
             assembly.GetType("UnityEditor.InspectorWindow"),
